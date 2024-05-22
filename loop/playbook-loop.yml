@@ -1,0 +1,20 @@
+---
+- hosts: planetexpress
+  gather_facts: no
+
+
+  vars:
+    beatles:
+      - lennon
+      - mccartney
+      - starr
+      - harrison
+  tasks:
+  - name: creat a directory if it does not exist
+    ansible.builtin.file
+    path: "{{ item }}"
+    state: directory
+    loop: "{{ beatles }}"
+    file:
+         state: directory
+         path: "{{ item }}"
