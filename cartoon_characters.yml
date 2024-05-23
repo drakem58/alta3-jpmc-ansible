@@ -1,0 +1,36 @@
+---
+- name: Create directories for popular cartoon characters on farnsworth
+  hosts: farnsworth
+  gather_facts: no
+
+  vars:
+    - fworthpword.yml 
+
+    cartoon_characters:
+      - MickeyMouse
+      - BugsBunny
+      - HomerSimpson
+      - SpongeBobSquarePants
+      - ScoobyDoo
+
+  tasks:
+    - name: Create directories for each cartoon character
+      file:
+        path: "{{ cartoon_characters.0 }}"
+        state: directory
+    - name: Create directories for each cartoon character
+      file:
+        path: "{{ cartoon_characters.1 }}"
+        state: directory
+    - name: Create directories for each cartoon character
+      file:
+        path: "{{ cartoon_characters.2 }}"
+        state: directory
+    - name: Create directories for each cartoon character
+      file:
+        path: "{{ cartoon_characters.3 }}"
+        state: directory
+    - name: Create directories for each cartoon character
+      file:
+        path: "{{ cartoon_characters.4 }}"
+        state: directory
